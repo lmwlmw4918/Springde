@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+"
+>
+    <!--    组件扫描 service 和mapper-->
+    <context:component-scan base-package="com.itheima">
+        <!--        排除扫描controller-->
+        <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
+
+
+<!--    加载映射-->
+    <context:property-placeholder location="classpath:jdbc.properties"></context:property-placeholder>
+<!--    配置数据源信息-->
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.name}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+    <!--构造方法注入-->
+    <bean id="account" class="com.itheima.domain.Account">
+<!--        数组注入-->
+        <property name="array" >
+            <array>
+                <value>200</value>
+                <value>100</value>
+                <value>20</value>
+            </array>
+        </property>
+<!--        集合注入-->
+        <property name="list" >
+           <list>
+               <value>ds</value>
+               <value>ds</value>
+               <value>ds</value>
+               <value>ds</value>
+           </list>
+        </property>
+<!--        set注入-->
+        <property name="set">
+                <set>
+                    <value>po</value>
+                    <value>po</value>
+                    <value>po</value>
+                </set>
+        </property>
+<!--        map注入-->
+        <property name="map" >
+            <map>
+                <entry key="1" value="po"/>
+                <entry key="1" value="po"/>
+                <entry key="1" value="po"/>
+                <entry key="1" value="po"/>
+
+            </map>
+        </property>
+<!--        properties注入-->
+        <property name="properties">
+            <props>
+                <prop key="driver"> sad</prop>
+                <prop key="driver"> sad</prop>
+                <prop key="driver"> sad</prop>
+            </props>
+        </property>
+
+    </bean>
+    <bean id="accountServiceimp" class="com.itheima.service.imp.AccountServiceImp" autowire="constructor">
+
+    </bean>
+
+<!--    配置sesssionfactory对象-->
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+
+        <property name="dataSource" ref="dataSource"></property>
+        <property name="mapperLocations" value="classpath:mapper/AccountMapper.xml"></property>
+<!--        加载mybatis核心文件-->
+        <property name="configLocation" value="classpath:sqlMapConfig-spring.xml"/>
+     </bean>
+<!--    扫描mapper所在的包 为mapper创建实现类-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.itheima.Mapper"/>
+    </bean>
+
+<!--    声明式事务控制-->
+
+<!--    平台事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+<!--    配置事务增强-->
+    <tx:advice id="txAdvice">
+        <tx:attributes>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
+<!--    事务的织入-->
+    <aop:config >
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* com.itheima.service.imp.*.*(..))"></aop:advisor>
+    </aop:config>
+</beans>

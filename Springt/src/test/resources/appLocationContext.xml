@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="userDao" scope="prototype" class="itcast.domain.daoImp.userDaoImp"  init-method="init" destroy-method="destory"></bean>-->
+<!--    <bean id="factory" class="itcast.factory.beanFactory" ></bean>-->
+<!--    <bean id="userDao" factory-bean="factory" factory-method="getUser"></bean>-->
+<bean id="userDao" class="itcast.dao.daoImp.userDaoImp"></bean>
+<!--<bean id="userService" class="itcast.service.userServiceImp">-->
+<!--    <property name="userDao" ref="userDao"></property>-->
+<!--</bean>-->
+<!--    <bean id="userService" class="itcast.service.userServiceImp" p:userDao="userDao" p:userDao-ref="userDao"/>-->
+    <bean id="userService" class="itcast.service.userServiceImp">
+      <constructor-arg name="userDao" ref="userDao"/>
+
+
+      <property name="name" value="Bob"/>
+        <property name="age" value="20"/>
+        <property name="list">
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+            </list>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="user1" value-ref="user1"></entry>
+                <entry key="user2" value-ref="user2"></entry>
+                <entry key="user3" value-ref="user3"></entry>
+            </map>
+        </property>
+        <property name="properties" >
+            <props>
+                <prop key="p1">ppp1</prop>
+                <prop key="p2">ppp2</prop>
+                <prop key="p3">ppp3</prop>
+            </props>
+        </property>
+
+    </bean>
+    <bean id="user1" class="itcast.domain.User">
+        <property name="name" value="张三"/>
+        <property name="age" value="20"/>
+    </bean>
+    <bean id="user2" class="itcast.domain.User">
+        <property name="name" value="王五"/>
+        <property name="age" value="30"/>
+    </bean>
+    <bean id="user3" class="itcast.domain.User">
+        <property name="name" value="李六"/>
+        <property name="age" value="50"/>
+    </bean>
+
+</beans>

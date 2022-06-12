@@ -1,0 +1,3 @@
+com\ithei\domain\User.class
+com\ithei\dao\UserMapper.class
+com\ithei\service\testone.class

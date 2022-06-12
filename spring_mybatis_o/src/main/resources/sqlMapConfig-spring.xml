@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+<!--    &lt;!&ndash;    加载外部资源&ndash;&gt;-->
+<!--    <properties resource="jdbc.properties"></properties>-->
+
+<!--        定义别名-->
+    <typeAliases>
+        <typeAlias type="com.itheima.domain.Account" alias="account"></typeAlias>
+    </typeAliases>
+
+
+<!--    <mappers>-->
+<!--        <mapper resource="mapper/AccountMapper.xml"></mapper>-->
+<!--        &lt;!&ndash;        <package name="mapper"/>&ndash;&gt;-->
+<!--    </mappers>-->
+
+
+</configuration>

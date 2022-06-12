@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+    <!--    加载外部资源-->
+    <properties resource="jdbc.properties"></properties>
+
+<!--        定义别名-->
+    <typeAliases>
+        <typeAlias type="com.itheima.domain.Account" alias="account"></typeAlias>
+    </typeAliases>
+
+
+<!--    环境-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="Jdbc"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.name}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+<!--    加载映射-->
+    <mappers>
+        <mapper resource="mapper/AccountMapper.xml"></mapper>
+<!--        <package name="mapper"/>-->
+    </mappers>
+</configuration>

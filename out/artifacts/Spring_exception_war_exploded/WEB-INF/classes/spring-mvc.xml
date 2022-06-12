@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+<!--    注册驱动-->
+    <mvc:annotation-driven/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+<!--    静态资源权限-->
+    <mvc:default-servlet-handler/>
+
+<!--    逐渐扫描-->
+    <context:component-scan base-package="com.controller"/>
+<!--    配置异常处理器-->
+<!--    <bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
+<!--&lt;!&ndash;        <property name="defaultErrorView" value="error"/>&ndash;&gt;-->
+<!--        <property name="exceptionMappings">-->
+<!--            <map>-->
+<!--                <entry key="java.lang.ClassCastException" value="error1"/>-->
+<!--                <entry key="com.exception.MyException" value="error2"/>-->
+<!--            </map>-->
+<!--        </property>-->
+
+<!--    </bean>-->
+<!--    配置自定义异常处理器-->
+    <bean class="com.resolver.MyExceptionResolver"/>
+</beans>

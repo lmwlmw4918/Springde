@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Spring_tx (1)" />
+        <module name="spring_zhu" />
+        <module name="Spring-Mvc-interceptor" />
+        <module name="spring-mvc-one" />
+        <module name="Spring_jd" />
+        <module name="Spring_mvc" />
+        <module name="Spring_exception" />
+        <module name="Sping_jdbc" />
+        <module name="sping_aopandioc" />
+        <module name="Spring_aop" />
+        <module name="spring_mybatis_one" />
+        <module name="Spring_tx" />
+        <module name="spring_mybaits" />
+        <module name="Spring_po" />
+        <module name="spring_mybatis_two" />
+        <module name="Springt" />
+        <module name="spring_mybatis_three" />
+        <module name="spring_mybatis_o" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sc" target="17" />
+      <module name="sping_aopandioc" target="17" />
+      <module name="Sping_jdbc" target="17" />
+      <module name="Spring-Mvc-interceptor" target="17" />
+      <module name="spring-mvc-one" target="17" />
+      <module name="Spring_aop" target="17" />
+      <module name="Spring_exception" target="17" />
+      <module name="Spring_jd" target="17" />
+      <module name="Spring_mvc" target="17" />
+      <module name="spring_mybaits" target="17" />
+      <module name="spring_mybatis_o" target="17" />
+      <module name="spring_mybatis_one" target="17" />
+      <module name="spring_mybatis_three" target="17" />
+      <module name="spring_mybatis_two" target="17" />
+      <module name="Spring_po" target="17" />
+      <module name="Spring_tx" target="17" />
+      <module name="Spring_tx (1)" target="17" />
+      <module name="spring_zhu" target="17" />
+      <module name="Springt" target="17" />
+      <module name="text" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

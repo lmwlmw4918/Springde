@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/spring-mvc-one" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring_aop" />
+    <file type="web" url="file://$PROJECT_DIR$/Spring_po/web/WEB-INF/web.xml" />
+    <type id="Spring" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Springt/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_jd/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_zhu/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_mvc/pom.xml" />
+        <option value="$PROJECT_DIR$/text/pom.xml" />
+        <option value="$PROJECT_DIR$/Sping_jdbc/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_po/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring-Mvc-interceptor/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_exception/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_aop/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_tx/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_tx_zhu_test/pom.xml" />
+        <option value="$PROJECT_DIR$/Spring_tx_zhu/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mybaits/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mybatis_one/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mybatis_two/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mybatis_three/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_mybatis_o/pom.xml" />
+        <option value="$PROJECT_DIR$/sping_aopandioc/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-mvc-one/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
